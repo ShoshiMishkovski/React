@@ -4,25 +4,27 @@ import AboutComponent from "./AboutComponent";
 
 import ShopComponent from "./ShopComponent";
 import CartComponent from "./CartComponent";
+import Paragraph1 from "./paragraph1";
+import Paragraph2 from "./paragraph2";
+import Paragraph3 from "./paragraph3";
+import PaymentComponent from "./PaymentComponent";
 
 
 
 export default function Navbar() {
     return (
         <>
-      
-                <Link to="/AboutComponent">About</Link>
+         <div id="a">
+                <Link to="/AboutComponent" id="b">About</Link>
                 <Link to="/ShopComponent">Shop</Link>
-                {/* <Link to="/about">About</Link> */}
+                </div>
 
                 <Routes>
                     <Route path="/ShopComponent" element={<ShopComponent></ShopComponent>} />
                     <Route path="/CartComponent" element={<CartComponent></CartComponent>}/>
-                    <Route path="/AboutComponent" element={<AboutComponent></AboutComponent>} />
-                 
-                    {/* <Route path="/about" element={<About></About>} /> */}
+                    <Route path="/PaymentComponent" element={<PaymentComponent></PaymentComponent>}/>
+                    <Route path="/AboutComponent" element={<AboutComponent><Paragraph1></Paragraph1><Paragraph2></Paragraph2><Paragraph3></Paragraph3></AboutComponent>} />
                 </Routes>
-        
         </>
     )
 }

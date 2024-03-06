@@ -32,35 +32,18 @@ const initialState=[{id:"1",name:"flower earings",qty:5,image: flowerEarings, pr
     switch(action.type){
         case "DECREASE_QTY":
             {
-                
             const newProducts=[...state]
-            
-            console.log("Adding to cart")
-            console.log(newProducts[action.index].qtyInCart)
-            newProducts[action.index].qty=newProducts[action.index].qty-1
-
-            newProducts[action.index].qtyInCart=newProducts[action.index].qtyInCart+1
-            
+            newProducts.find((shopItem)=>shopItem.id===action.id).qty-=1
+            newProducts.find((shopItem)=>shopItem.id===action.id).qtyInCart+=1
             return newProducts
             }
         case "INCREASE_QTY":
             {
-                debugger
                 const newProducts=[...state]
-                console.log("increase")
-                console.log(newProducts[action.index].qtyInCart)
-                newProducts[action.index].qty=newProducts[action.index].qty+1
-                
-                newProducts[action.index].qtyInCart=newProducts[action.index].qtyInCart-1
+                newProducts.find((shopItem)=>shopItem.id===action.id).qty+=1
+                newProducts.find((shopItem)=>shopItem.id===action.id).qtyInCart-=1
                 return newProducts
             }
-        case "INCREASE_QTY_AFTER_DELETE":
-           {
-            debugger
-            const newProducts=[...state]
-            newProducts[action.index].qty=newProducts[action.index].qty+newProducts[action.index].qtyInCart
-            return newProducts
-           }
         default:
             return state
     }

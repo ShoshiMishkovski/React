@@ -15,13 +15,6 @@ const CartReducer=(state=initialState, action)=>{
             }
         case "ADD_TO_CART":
             {
-                // console.log("Adding to cart")
-                // const item=state.filter((item)=>item.id==action.newProduct.id)
-                // if(item[0]==null){
-                //     return [...state, action.newProduct]
-                // }
-                // const newState=state.filter((item)=>item.id!=action.newProduct.id)
-
                 return [...state, action.newProduct]
                 
             }

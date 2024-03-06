@@ -1,16 +1,13 @@
-export const decreaseQty=(index)=>({
+export const decreaseQty=(index,id)=>({
     
     type:"DECREASE_QTY",
-    index
-})
-
-export const increaseQty=(index)=>({
-    type:"INCREASE_QTY",
-    index
-})
-
-export const increaseQtyAfterDelete=(index)=>({
-    type:"INCREASE_QTY_AFTER_DELETE",
     index,
-
+    id
 })
+
+export const increaseQty=(index,id)=>({
+    type:"INCREASE_QTY",
+    index,
+    id
+})
+
