@@ -1,0 +1,13 @@
+
+
+From node:22-slim
+
+Workdir /reactapp
+
+COPY . .
+
+RUN npm install
+
+Expose 3000
+
+CMD ["npm","start"]
